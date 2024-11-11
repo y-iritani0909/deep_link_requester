@@ -1,6 +1,6 @@
 # deep_link_requester
 
-カスタムスキーマ名：`deep_link_req`
+カスタムスキーマ名：`deep-link-req`
 
 ## 使い方
 cloneして`pub get`したら動きます。<br>

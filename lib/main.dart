@@ -92,6 +92,19 @@ class _DeepLinkTesterState extends State<DeepLinkTester> {
     }
   }
 
+  void _copyToTextFields(String uriString) {
+    Uri uri = Uri.parse(uriString);
+    setState(() {
+      _schemeController.text = uri.scheme;
+      _hostController.text = uri.host;
+      _pathController.text = uri.path;
+      _queryController.text = uri.query;
+    });
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Copied to input fields')),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,6 +149,10 @@ class _DeepLinkTesterState extends State<DeepLinkTester> {
                   return ListTile(
                     title: Text(uri),
                     onTap: () => _reLaunchFromHistory(uri),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.copy),
+                      onPressed: () => _copyToTextFields(uri),
+                    ),
                   );
                 },
               ),
