@@ -54,7 +54,7 @@
         <string>Editor</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>deep-sample</string>
+        <string>deep-link-req</string>
         </array>
         </dict>
     </array>
